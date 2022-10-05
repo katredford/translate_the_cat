@@ -1,3 +1,4 @@
+const printMeow = document.getElementById("langPrint")
 
 const options = {
 	method: 'GET',
@@ -7,7 +8,7 @@ const options = {
 	}
 };
 
-const lang = "ga"
+const lang = "ja"
 
 // fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=meow&mt=1&onlyprivate=0&de=a%40b.c', options)
 // 	.then(response => response.json())
@@ -23,7 +24,8 @@ fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?l
   })
 
   .then(function (data) {
-      console.log(data)
+    console.log(data)
+    printMeow.textContent = data.responseData.translatedText
   })
 
 function myFunction() {
