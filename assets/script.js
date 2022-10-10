@@ -15,7 +15,7 @@ const lang = "ja"
 // 	.then(response => console.log(response))
 //   .catch(err => console.error(err));
   
-//fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=meow&mt=1&onlyprivate=0&de=a%40b.c', options)
+// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=meow&mt=1&onlyprivate=0&de=a%40b.c', options)
 
 
   // Convert the response to JSON
