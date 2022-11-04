@@ -7,12 +7,19 @@ const options = {
 		'X-RapidAPI-Host': 'translated-mymemory---translation-memory.p.rapidapi.com'
 	}
 };
+// document.body.style.backgroundImage = "url('./assets/images/france.jpg')";
+//document.body.style.backgroundColor = "#82A7A6";
 
-  
   function getOption() {
         selectElement = document.querySelector('#getLanguage');
         lang = selectElement.value;
         // document.querySelector('#langPrint').textContent = output;
+    console.log(lang)
+    if (lang === 'fr') {
+      document.body.style.backgroundColor = "#82A7A6";
+       document.body.style.backgroundImage = "url('./assets/images/france.jpg')";
+    }
+
     
 fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=meow&mt=1&onlyprivate=0&de=a%40b.c', options)
 
@@ -23,11 +30,14 @@ fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?l
   })
 
   .then(function (data) {
-     console.log(data, "translation data")
+    //  console.log(data, "translation data")
     printMeow.textContent = data.responseData.translatedText.toUpperCase()
-    console.log(data.matches[0].target.substring(3).toLowerCase(), "country code")
+    //console.log(data.matches[0].target.substring(3).toLowerCase(), "country code")
+ 
+
     if(data.matches.length === 1){
       let country = data.matches[0].target.substring(3).toLowerCase()
+      flagEl.innerHTML = `<img src=${flagUrl}></img>`
       getFlag(country)
     } else {
       let country = data.matches[1].target.substring(3).toLowerCase()
@@ -48,7 +58,7 @@ function getFlag(country) {
     })
     .then(function (data) {
       const flagEl = document.getElementById("flag")
-      console.log(data, "country info")
+      // console.log(data, "country info")
       let flagUrl = data.flags.png
       flagEl.innerHTML = `<img src=${flagUrl}></img>`
      
@@ -56,4 +66,3 @@ function getFlag(country) {
      
 }
   
-    
