@@ -23,27 +23,37 @@ fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?l
   })
 
   .then(function (data) {
-    console.log(data)
+     console.log(data, "translation data")
     printMeow.textContent = data.responseData.translatedText.toUpperCase()
-    getFlag(lang)
+    console.log(data.matches[0].target.substring(3).toLowerCase(), "country code")
+    if(data.matches.length === 1){
+      let country = data.matches[0].target.substring(3).toLowerCase()
+      getFlag(country)
+    } else {
+      let country = data.matches[1].target.substring(3).toLowerCase()
+      getFlag(country)
+      }
+    // getFlag(country)
   })
 
 }
 
-function getFlag(lang) {
+function getFlag(country) {
   // var lung = 'it' 
-  if (lang === "ja") {
-        lang === "jp"
+  
       
-  fetch(`https://restcountries.com/v2/alpha/${lang}`)
+  fetch(`https://restcountries.com/v2/alpha/${country}`)
     .then(function (response) {
       return response.json()
     })
     .then(function (data) {
+      const flagEl = document.getElementById("flag")
       console.log(data, "country info")
+      let flagUrl = data.flags.png
+      flagEl.innerHTML = `<img src=${flagUrl}></img>`
      
     })
-     }
+     
 }
   
     
