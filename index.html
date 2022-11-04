@@ -14,10 +14,10 @@
 <body>
 
   <p> Choose Language:
-    <select id="getLanguage">
+    <select id="getLanguage" onchange="getOption()">
+      <option>choose language</option>
       <option value="ja">japanese</option>
       <option value="da">Danish</option>
-      <option value="ca">Catalan</option>
       <option value="nl">Dutch</option>
       <option value="fa">Farsi</option>
       <option value="fr">French</option>
@@ -26,14 +26,9 @@
       <option value="lv">Latvian</option>
       <option value="no">Norwegian</option>
       <option value="pa">Punjabi</option>
-      <option value="es-mx">Spanish</option>
+      <option value="es">Spanish</option>
     </select>
   </p>
-  
-  
-  
-  <button onclick="getOption()"> Get Translation </button>
-
 
   </div>
   <div id="langPrint">
@@ -42,9 +37,7 @@ replace this
 
 <div id="flag">Flag</div>
 
-<div id="test">
-  <img src="./assets/images/france.jpg">
-</div>
+
   <!-- Optional JavaScript -->
   <script src="./assets/script.js"></script>
 
