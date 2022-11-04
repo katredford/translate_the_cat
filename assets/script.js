@@ -1,5 +1,5 @@
 const printMeow = document.getElementById("langPrint")
-
+const langChoice = document.getElementsByClassName("dropdown-content")
 const options = {
 	method: 'GET',
 	headers: {
@@ -8,40 +8,42 @@ const options = {
 	}
 };
 
-const lang = "ja"
-
-// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=meow&mt=1&onlyprivate=0&de=a%40b.c', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-//   .catch(err => console.error(err));
   
-// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=meow&mt=1&onlyprivate=0&de=a%40b.c', options)
+  function getOption() {
+        selectElement = document.querySelector('#getLanguage');
+        lang = selectElement.value;
+        // document.querySelector('#langPrint').textContent = output;
+    
+fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=meow&mt=1&onlyprivate=0&de=a%40b.c', options)
 
 
-  // Convert the response to JSON
+//   // Convert the response to JSON
   .then(function (response) {
     return response.json();
   })
 
   .then(function (data) {
     console.log(data)
-    printMeow.textContent = data.responseData.translatedText
+    printMeow.textContent = data.responseData.translatedText.toUpperCase()
+    getFlag(lang)
   })
 
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
+function getFlag(lang) {
+  // var lung = 'it' 
+  if (lang === "ja") {
+        lang === "jp"
+      
+  fetch(`https://restcountries.com/v2/alpha/${lang}`)
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (data) {
+      console.log(data, "country info")
+     
+    })
+     }
 }
+  
+    
