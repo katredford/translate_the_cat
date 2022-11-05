@@ -1,5 +1,6 @@
 const printMeow = document.getElementById("langPrint")
 const langChoice = document.getElementsByClassName("dropdown-content")
+const translateEl = document.getElementById("translate")
 const options = {
 	method: 'GET',
 	headers: {
@@ -9,6 +10,7 @@ const options = {
 };
 // document.body.style.backgroundImage = "url('./assets/images/france.jpg')";
 //document.body.style.backgroundColor = "#82A7A6";
+
 
   function getOption() {
         selectElement = document.querySelector('#getLanguage');
@@ -53,7 +55,7 @@ function getFlag(country) {
        
       let flagUrl = data.flags.png
       flagEl.innerHTML = `<img src=${flagUrl}></img>`
-      console.log(data.name)
+      console.log(data)
       getBackground(data.name.toLowerCase())
     })
      
@@ -73,10 +75,14 @@ fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${place}&locale=en-U
 	.then(response => response.json())
   .then(response => {
     console.log(response)
-    let pic = response.photos[0].src.original
+    //# lets randomize the background pics
+    var randomIndex = Math.floor(Math.random() * response.photos.length)
+    console.log(randomIndex, "randome index")
+    let pic = response.photos[randomIndex].src.original
     console.log(pic, "pic?")
-    document.body.style.backgroundColor = "#82A7A6";
+    
     document.body.style.backgroundImage = `url('${pic}')`;
+    document.body.style.backgroundColor = "#82A7A6";
   })
 	.catch(err => console.error(err));
 }
