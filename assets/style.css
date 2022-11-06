@@ -1,11 +1,31 @@
 body {
     background-blend-mode: soft-light;
-    background-size: cover;
-    
-    /* background-blend-mode:screen; */
+    background: no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+
+      /* background-blend-mode:screen; */
     
 }
 
 /* background {
   opacity: 50%;
 } */
+
+.flag-box {
+  background-image: url('./images/acat.speach.small.png');
+  height: 388px;
+  width: 348px;
+  background-repeat: no-repeat;
+}
+
+#flag {
+  background-color: blue;
+  
+  width: 350px;
+  height: 250px;
+
+
+}
