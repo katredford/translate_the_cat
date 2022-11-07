@@ -1,4 +1,5 @@
 body {
+  font-family: 'Trebuchet MS', sans-serif;
   background-blend-mode: soft-light;
   background: no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -51,9 +52,19 @@ body {
 #flag {
   /* background-color: blue; */
   width: 356px;
-      margin: 290px 36px 25px 168px;
+      margin: 19px 36px 25px 173px;
   /* height: 250px; */
 
+}
+
+.boxMessage {
+margin: 251px 90px 10px 261px;
+-ms-transform: rotate(20deg);
+  /* IE 9 */
+  transform: rotate(170deg);
+  opacity: 63%;
+ width: 100px;
+ font-weight: bold;
 }
 
 .center {
