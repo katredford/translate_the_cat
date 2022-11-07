@@ -29,7 +29,9 @@ fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?l
        //*console.log(data, "translation data")
     printMeow.textContent = data.responseData.translatedText.toUpperCase()
     //console.log(data.matches[0].target.substring(3).toLowerCase(), "country code")
- 
+    
+    thisEndUp(lang)
+    
 
     if(data.matches.length === 1){
       let country = data.matches[0].target.substring(3).toLowerCase()
@@ -56,7 +58,7 @@ function getFlag(country) {
       let flagUrl = data.flags.png
   
       flagEl.innerHTML = `<img src=${flagUrl}></img>`
-      console.log(data)
+      //console.log(data)
       getBackground(data.name.toLowerCase())
     })
      
@@ -75,15 +77,36 @@ function getBackground(place) {
 fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${place}&locale=en-US&per_page=15&page=1`, options)
 	.then(response => response.json())
   .then(response => {
-    console.log(response)
+    //console.log(response)
     //# lets randomize the background pics
     var randomIndex = Math.floor(Math.random() * response.photos.length)
-    console.log(randomIndex, "randome index")
+    //console.log(randomIndex, "randome index")
     let pic = response.photos[randomIndex].src.original
-    console.log(pic, "pic?")
+    //console.log(pic, "pic?")
     
     document.body.style.backgroundImage = `url('${pic}')`;
     // document.body.style.backgroundColor = "#82A7A6";
   })
 	.catch(err => console.error(err));
+}
+
+function thisEndUp(lang) {
+       
+
+    
+fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=this end up&mt=1&onlyprivate=0&de=a%40b.c', options)
+
+
+//   // Convert the response to JSON
+  .then(function (response) {
+    return response.json();
+  })
+
+  .then(function (data) {
+       console.log(data, "translation data")
+    const boxTextEl = document.getElementById('thisSideUp')
+    boxTextEl.textContent = data.responseData.translatedText.toUpperCase()
+    
+  })
+
 }
