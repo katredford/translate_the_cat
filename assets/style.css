@@ -1,25 +1,38 @@
 body {
-    background-blend-mode: soft-light;
-    background: no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      background-color:#82A7A6;
-      /* background-blend-mode:screen; */
-    background-image: linear-gradient(#00a8ff, yellow);
+  background-blend-mode: soft-light;
+  background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #82A7A6;
+  /* background-blend-mode:screen; */
+  background-image: linear-gradient(#00a8ff, yellow);
 }
 
 /* background {
   opacity: 50%;
 } */
 
-.meow{
-  margin: 9px 38px 10px 21px;
-    font-size: 43px;
+.meow {
+
+  font-size: 55px;
+  text-align: center;
+  width: 305px;
+  height: 99px;
+  padding-top: 17px;
+
 }
+
+.speech-bubble {
+  /* background-color: coral;
+  opacity: 80%; */
+  width: 305px;
+  height: 99px;
+}
+
 .flag-box {
- 
+
   height: 388px;
   width: 348px;
   background-repeat: no-repeat;
@@ -27,7 +40,7 @@ body {
 
 #flag {
   background-color: blue;
-width: 356px;
+  width: 356px;
   margin-top: 351px;
   /* height: 250px; */
 
@@ -35,14 +48,14 @@ width: 356px;
 
 .center {
   margin: auto;
-  width: 50%;
-  padding: 10px;
+  /* width: 50%;
+  padding: 10px; */
 }
 
-.catBox{
+.catBox {
   /* padding-top: 300px; */
-  background-image: url('./images/acat.speach.small.png');
-  height: 388px;
-    width: 348px;
-    background-repeat: no-repeat;
+  background-image: url('./images/catSpeak.box.png');
+  height: 448px;
+  width: 447px;
+  background-repeat: no-repeat;
 }
