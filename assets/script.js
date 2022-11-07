@@ -82,7 +82,7 @@ fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${place}&locale=en-U
     console.log(pic, "pic?")
     
     document.body.style.backgroundImage = `url('${pic}')`;
-    document.body.style.backgroundColor = "#82A7A6";
+    // document.body.style.backgroundColor = "#82A7A6";
   })
 	.catch(err => console.error(err));
 }
