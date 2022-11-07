@@ -30,18 +30,28 @@ body {
   width: 305px;
   height: 99px;
 }
+.country-flag img {
+  -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    opacity: 71%;
+    height: 30px;
+    width: 30px;
+    -ms-transform: skewY(20deg);
+      /* IE 9 */
+      transform: skewY(36deg);
+}
 
 .flag-box {
-
   height: 388px;
   width: 348px;
   background-repeat: no-repeat;
 }
 
 #flag {
-  background-color: blue;
+  /* background-color: blue; */
   width: 356px;
-  margin-top: 351px;
+      margin: 290px 36px 25px 168px;
   /* height: 250px; */
 
 }

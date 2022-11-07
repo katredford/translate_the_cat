@@ -54,6 +54,7 @@ function getFlag(country) {
       const flagEl = document.getElementById("flag")
        
       let flagUrl = data.flags.png
+  
       flagEl.innerHTML = `<img src=${flagUrl}></img>`
       console.log(data)
       getBackground(data.name.toLowerCase())
