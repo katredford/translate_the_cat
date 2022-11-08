@@ -16,7 +16,14 @@ const options = {
         selectElement = document.querySelector('#getLanguage');
         lang = selectElement.value;
 
-    
+    if (lang === 'en') {
+      const boxEl = document.getElementById("thisSideUp")
+      const flagEl = document.getElementById('flag')
+      printMeow.textContent = "MEOW"
+      boxEl.textContent = "THIS END UP"
+      flagEl.innerHTML = ""
+      return
+    }
 fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=meow&mt=1&onlyprivate=0&de=a%40b.c', options)
 
 
