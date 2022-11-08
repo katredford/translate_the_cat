@@ -1,3 +1,9 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  /* display: inline-block; */
+}
+
 body {
   font-family: 'Trebuchet MS', sans-serif;
   background-blend-mode: soft-light;
@@ -9,6 +15,8 @@ body {
   background-color: #82A7A6;
   /* background-blend-mode:screen; */
   background-image: linear-gradient(#00a8ff, yellow);
+
+
 }
 
 /* background {
@@ -67,12 +75,12 @@ body {
   font-weight: bold;
   text-align: center; */
   margin: 228px 115px -28px 226px;
-    -ms-transform: rotate(20deg);
-    transform: rotate(170deg);
-    opacity: 63%;
-    width: 182px;
-    font-weight: bold;
-    text-align: center;
+  -ms-transform: rotate(20deg);
+  transform: rotate(170deg);
+  opacity: 63%;
+  width: 182px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .center {
@@ -87,4 +95,71 @@ body {
   height: 448px;
   width: 447px;
   background-repeat: no-repeat;
+
+
+
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    /* background-color: rgb(255, 180, 221); */
+  }
+
+  .catBox {
+    background-image: url('./images/catSpeak.box.png');
+    background-size: 272px;
+    height: 273px;
+    width: 295px;
+    margin-top: 20px;
+  }
+
+  .meow {
+    font-size: 38px;
+    text-align: center;
+    width: 184px;
+    height: 95px;
+    padding-top: 6px;
+  }
+
+  /* .boxMessage {
+    margin: 103px 123px -2px 105px;
+    -ms-transform: rotate(20deg);
+    transform: rotate(170deg);
+    opacity: 63%;
+    width: 181px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+  } */
+
+  .boxMessage {
+    margin: 95px 123px -2px 116px;
+    -ms-transform: rotate(20deg);
+    transform: rotate(170deg);
+    opacity: 63%;
+    width: 143px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+  }
+
+
+
+
+  #flag {
+    /* background-color: blue; */
+    width: 128px;
+    margin: 9px 36px 25px 96px;
+    /* height: 250px; */
+  }
+
+  .country-flag img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 71%;
+    height: 22px;
+    width: 18px;
+    -ms-transform: skewY(20deg);
+    transform: skewY(36deg);
+  }
 }

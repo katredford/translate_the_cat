@@ -77,11 +77,14 @@ function getBackground(place) {
 fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${place}&locale=en-US&per_page=15&page=1`, options)
 	.then(response => response.json())
   .then(response => {
-    //console.log(response)
+    console.log(response)
     //# lets randomize the background pics
     var randomIndex = Math.floor(Math.random() * response.photos.length)
     //console.log(randomIndex, "randome index")
-    let pic = response.photos[randomIndex].src.original
+    // let pic = response.photos[randomIndex].src.original
+    // let pic = response.photos[randomIndex].src.small
+    let pic = response.photos[randomIndex].src.medium
+    // let pic = response.photos[randomIndex].src.large
     //console.log(pic, "pic?")
     
     document.body.style.backgroundImage = `url('${pic}')`;
@@ -91,9 +94,7 @@ fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${place}&locale=en-U
 }
 
 function thisEndUp(lang) {
-       
-
-    
+     
 fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=this end up&mt=1&onlyprivate=0&de=a%40b.c', options)
 
 
@@ -103,7 +104,7 @@ fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?l
   })
 
   .then(function (data) {
-       console.log(data, "translation data")
+       //# console.log(data, "translation data")
     const boxTextEl = document.getElementById('thisSideUp')
     boxTextEl.textContent = data.responseData.translatedText.toUpperCase()
     
