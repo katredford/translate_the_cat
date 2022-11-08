@@ -154,8 +154,8 @@ body {
   }
 
   .country-flag img {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    /* -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); */
     opacity: 71%;
     height: 22px;
     width: 18px;

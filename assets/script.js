@@ -22,6 +22,8 @@ const options = {
       printMeow.textContent = "MEOW"
       boxEl.textContent = "THIS END UP"
       flagEl.innerHTML = ""
+      getBackground("England")
+      getFlag("gb")
       return
     }
 fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' + lang + '&q=meow&mt=1&onlyprivate=0&de=a%40b.c', options)
@@ -81,7 +83,7 @@ function getBackground(place) {
 	}
 };
 
-fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${place}&locale=en-US&per_page=15&page=1`, options)
+fetch(`https://pexelsdimasv1.p.rapidapi.com/v1/search?query=${place}&locale=en-US&per_page=30&page=1`, options)
 	.then(response => response.json())
   .then(response => {
     console.log(response)
