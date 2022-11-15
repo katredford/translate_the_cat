@@ -61,7 +61,7 @@ function getFlag(country) {
       return response.json()
     })
     .then(function (data) {
-      //* console.log(data, "country info")
+       console.log(data, "country info")
       const flagEl = document.getElementById("flag")
        
       let flagUrl = data.flags.png
